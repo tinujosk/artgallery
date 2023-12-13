@@ -22,6 +22,23 @@
     />
   </head>
   <body>
-    Login page - Under development by Yash
+    <div class="login-container">
+      <h2>Login</h2>
+      <form id="loginForm" method="post">
+        <label for="email">Email or Username</label>
+        <input type="text" id="email" name="email" placeholder="Please enter Email or Username here" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Please enter Password here" required>
+
+        <button type="button" onclick="validateLogin()">Login</button>
+
+        <!-- Display error message -->
+        <p id="errorMessage" class="error-message"></p>  
+
+      </form>
+    </div>
+    <script src="javascript/jquery-3.7.1.min.js"></script> 
+    <script src="javascript/login.js"></script>
   </body>
 </html>
