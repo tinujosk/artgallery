@@ -40,6 +40,10 @@ ul li {
   cursor: pointer;
 }
 
+#user-profile ul {
+  display: flex;
+}
+
 header nav ul {
   display: flex;
 }
