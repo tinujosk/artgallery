@@ -10,13 +10,6 @@ footer {
   color: #faebd7;
 }
 
-main {
-  /* background: url("../images/background-img.jpg"); */
-  opacity: 0.3;
-  height: 100vh;
-  background-size: cover;
-}
-
 header {
   display: flex;
   align-items: center;
