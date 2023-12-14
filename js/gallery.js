@@ -23,3 +23,7 @@ $(document).ready(function () {
     $(".image-container p").css("display", "block");
   });
 });
+
+var loggedInUser = localStorage.getItem("loggedInUser");
+var usernameElement = document.getElementById("username");
+usernameElement.textContent = loggedInUser;
