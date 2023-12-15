@@ -1,3 +1,8 @@
+/*
+Done by Varshini Srinivasan
+email: vsrinivasan2685@conestogac.on.ca
+*/
+
 $(document).ready(function () {
   $("#contactForm").submit(function (e) {
     e.preventDefault(); // Prevent the form from submitting normally
