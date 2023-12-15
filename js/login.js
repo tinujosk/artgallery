@@ -1,64 +1,52 @@
-// function validateLogin() {
-//   var email = document.getElementById('email').value;
-//   var password = document.getElementById('password').value;
-//   var errorMessageElement = document.getElementById('errorMessage');
+// use object to store user login details
+var users = [
+  { email: 'yash@gmail.com', username: 'yash', password: 'yash1234' },
+  { email: 'tinu@gmail.com', username: 'tinu', password: 'tinu1234' },
+  { email: 'smith@gmail.com', username: 'smith', password: 'smith1234' },
+  { email: 'varshini@gmail.com', username: 'varshini', password: 'varshini1234' },
+];
 
-//   // Example validation (replace with your actual validation logic)
-//   if (email === 'example@example.com' && password === 'password123') {
-//     errorMessageElement.textContent = ''; // Clear previous error message
-//     alert('Login successful!');
-    
-//     // Redirect to the index page after successful login
-//     window.location.href = 'index.html';
-//   } else {
-//     errorMessageElement.textContent = 'Invalid Email or Username and Password. Please try again.';
-//   }
-// }
-// var loginButton = document.querySelector('button');
-
-// loginButton.addEventListener('mouseover', function() {
-//   loginButton.style.backgroundColor = '#1156b3'; /* Darker blue on hover */
-// });
-
-// loginButton.addEventListener('mouseout', function() {
-//   loginButton.style.backgroundColor = '#007bff'; /* Restore original blue color */
-// });
-
+// use function to check login is valid or not
 function validateLogin() {
   var email = $('#email').val();
   var password = $('#password').val();
   var errorMessageElement = $('#errorMessage');
+  var isLoggedIn = false;
 
   // Clear previous error message
   errorMessageElement.text('');
 
-  // Example validation using jQuery
-  if (email === '' || password === '') {
-    errorMessageElement.text('Please enter both Email/Username and Password.');
-  } else {
-    // Perform additional validation if needed
-    // For example, you can check the email format or password strength
+  let i;
+  // validation using a for loop
+  for (i = 0; i < users.length; i++) {
+    let user = users[i];
+    
+    if ((email === user.email || email === user.username) && password === user.password) {
+      // successful login
+      isLoggedIn = true;
 
-    // Simulate a successful login for demonstration purposes
-    if ((email === 'yash@gmail.com' || email === 'yash') && password === 'yash1234') {
       // store data for homepage username
       localStorage.setItem('loggedInUser', email);
-      alert('Login successful!');
-
+      alert('Login Successful!');
+      
       // Redirect to the index page after successful login
       window.location.href = 'home.html';
-    } else {
-      errorMessageElement.text('Invalid Email/Username or password. Please try again.');
+      break;
     }
+  }
+
+  if (!isLoggedIn) {
+    errorMessageElement.text('Invalid Email/Username or Password. Please try again.');
   }
 }
 
+// hover effect using jquery
 var loginButton = $('button');
 
-loginButton.on('mouseover', function() {
-  loginButton.css('background-color', '#1156b3'); /* Darker blue on hover */
+loginButton.on('mouseover', function () {
+  loginButton.css('background-color', '#1156b3');
 });
 
-loginButton.on('mouseout', function() {
-  loginButton.css('background-color', '#007bff'); /* Restore original blue color */
+loginButton.on('mouseout', function () {
+  loginButton.css('background-color', '#007bff');
 });
