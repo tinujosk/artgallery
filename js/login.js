@@ -1,52 +1,45 @@
-// use object to store user login details
-var users = [
-  { email: 'yash@gmail.com', username: 'yash', password: 'yash1234' },
-  { email: 'tinu@gmail.com', username: 'tinu', password: 'tinu1234' },
-  { email: 'smith@gmail.com', username: 'smith', password: 'smith1234' },
-  { email: 'varshini@gmail.com', username: 'varshini', password: 'varshini1234' },
+// User login details
+const users = [
+  { email: "yash@gmail.com", username: "yash", password: "yash1234" },
+  { email: "tinu@gmail.com", username: "tinu", password: "tinu1234" },
+  { email: "smith@gmail.com", username: "smith", password: "smith1234" },
+  {
+    email: "varshini@gmail.com",
+    username: "varshini",
+    password: "varshini1234",
+  },
 ];
 
-// use function to check login is valid or not
-function validateLogin() {
-  var email = $('#email').val();
-  var password = $('#password').val();
-  var errorMessageElement = $('#errorMessage');
-  var isLoggedIn = false;
+// Validate login function
+const validateLogin = () => {
+  const email = $("#email").val();
+  const password = $("#password").val();
+  const errorMessageElement = $("#errorMessage");
 
   // Clear previous error message
-  errorMessageElement.text('');
+  errorMessageElement.text("");
 
-  let i;
-  // validation using a for loop
-  for (i = 0; i < users.length; i++) {
-    let user = users[i];
-    
-    if ((email === user.email || email === user.username) && password === user.password) {
-      // successful login
-      isLoggedIn = true;
+  const user = users.find(
+    user => user.username === email || user.email === email
+  );
 
-      // store data for homepage username
-      localStorage.setItem('loggedInUser', email);
-      alert('Login Successful!');
-      
-      // Redirect to the index page after successful login
-      window.location.href = 'home.html';
-      break;
-    }
+  if (user && user.password === password) {
+    localStorage.setItem("loggedInUser", email);
+    window.location.href = "home.html";
+  } else {
+    errorMessageElement.text(
+      "Invalid Email/Username or Password. Please try again."
+    );
   }
+};
 
-  if (!isLoggedIn) {
-    errorMessageElement.text('Invalid Email/Username or Password. Please try again.');
-  }
-}
+// Hover effect using jquery
+const loginButton = $("button");
 
-// hover effect using jquery
-var loginButton = $('button');
-
-loginButton.on('mouseover', function () {
-  loginButton.css('background-color', '#1156b3');
+loginButton.on("mouseover", function () {
+  loginButton.css("background-color", "#1156b3");
 });
 
-loginButton.on('mouseout', function () {
-  loginButton.css('background-color', '#007bff');
+loginButton.on("mouseout", function () {
+  loginButton.css("background-color", "#007bff");
 });
