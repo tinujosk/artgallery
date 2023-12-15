@@ -56,7 +56,110 @@
       </div>
     </header>
     <main>
-      <section id="hero"></section>
+      <div class="container">
+        <span class="big-circle"></span>
+        <div class="form">
+          <div class="contact-info">
+            <h3 class="title">Let's get in touch</h3>
+            <p class="text">
+              Welcome to our Art Gallery's Contact Us page! At Art Gallery, we
+              are passionate about showcasing exquisite art from talented
+              artists worldwide. Whether you're an art enthusiast, a collector,
+              or an artist seeking exposure, we are here to assist you.
+            </p>
+
+            <div class="info">
+              <div class="information">
+                <p>92 Cherry Drive Uniondale, NY 11553</p>
+              </div>
+              <div class="information">
+                <p>lorem@ipsum.com</p>
+              </div>
+              <div class="information">
+                <p>123-456-789</p>
+              </div>
+            </div>
+
+            <div class="social-media">
+              <p>Connect with us :</p>
+              <div class="social-icons">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <span class="circle one"></span>
+            <span class="circle two"></span>
+
+            <form
+              id="contactForm"
+              name="contactForm"
+              action="#"
+              autocomplete="off"
+            >
+              <h3 class="title">Contact us</h3>
+              <div class="input-container">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="name"
+                  class="input"
+                />
+              </div>
+              <div class="input-container">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="email"
+                  class="input"
+                />
+              </div>
+              <div class="input-container">
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="phone"
+                  class="input"
+                />
+              </div>
+              <div class="input-container textarea">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="message"
+                  class="input"
+                ></textarea>
+              </div>
+              <input
+                id="submit"
+                name="submit"
+                message
+                type="submit"
+                value="Send"
+                class="btn"
+              />
+            </form>
+            <div id="popup" class="popup">
+              <p>Message sent!</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div id="footer-content">
@@ -106,5 +209,7 @@
         &copy; 2023 Copyright Art Gallery App. All rights reserved.
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/contact.js"></script>
   </body>
 </html>
