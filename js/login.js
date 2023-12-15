@@ -1,3 +1,8 @@
+/*
+Done by Yash Paragkumar Patel
+email: ypatel1704@conestogac.on.ca
+*/
+
 // User login details
 const users = [
   { email: "yash@gmail.com", username: "yash", password: "yash1234" },
@@ -23,6 +28,7 @@ const validateLogin = () => {
     user => user.username === email || user.email === email
   );
 
+  // If password is authenticated, stores the user details in the localStorage.
   if (user && user.password === password) {
     localStorage.setItem("loggedInUser", email);
     window.location.href = "home.html";
