@@ -1,3 +1,8 @@
+/*
+Done by Smitkumar Sanjaykumar Macwan
+email: smacwan9653@conestogac.on.ca
+*/
+
 // Init tabs
 $(function () {
   $("#tabs").tabs();
